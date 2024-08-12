@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="bigchocolaTW">
+    
+    <title>
+        
+            Hexo建置及github action自動部屬 |
+        
+        大大大巧克力鍋
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/logo.svg">
+    
+    
+<link rel="stylesheet" href="/font/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/font/css/brands.min.css">
+
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"bigchocolatw.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"大大大巧克力鍋","author":"bigchocolaTW","avatar":"/images/avatar.svg","logo":"/images/logo.svg","favicon":"/images/logo.svg"},"menu":{"home":"/","archives":"/archives","categories":"/categories","tags":"/tags","about":"/about"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"紀錄學習、生活、心情","hitokoto":false},"social_contact":{"enable":true,"links":{"github":null,"weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":null}},"scroll":{"progress_bar":false,"percent":true,"hide_header":true},"home":{"announcement":null,"category":true,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":false,"level_badge":"flase","custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null,"icon":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.36"},"waline":{"server_url":null,"reaction":false,"version":"3.2.1"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":false,"provider":"cdnjs"},"pjax":{"enable":false},"footer":{"since":2024,"word_count":false,"site_deploy":{"enable":false,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","source_data":{},"version":"4.2.0"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               大大大巧克力鍋
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/categories">
+                                
+                                CATEGORIES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/about">
+                                
+                                ABOUT
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/categories">
+                            
+                            CATEGORIES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/about">
+                            
+                            ABOUT
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        Hexo建置及github action自動部屬
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">bigchocolaTW</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-07-24 19:17:06</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Wed Jul 24 2024 12:00:54 GMT+0000">2024-07-24 12:00:54</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E6%8A%80%E8%A1%93/">技術</a></li>
+                        
+                    
+                            <li class="category-item">&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<a href="/categories/%E6%8A%80%E8%A1%93/%E6%95%99%E5%AD%B8/">教學</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/hexo/">hexo</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/github-action/">github action</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <h1 id="Hexo建置及github-action自動部屬"><a href="#Hexo建置及github-action自動部屬" class="headerlink" title="Hexo建置及github action自動部屬"></a>Hexo建置及github action自動部屬</h1><h2 id="前言-必備觀念與工具"><a href="#前言-必備觀念與工具" class="headerlink" title="前言: 必備觀念與工具"></a>前言: 必備觀念與工具</h2><p>這個網誌就是用Hexo (網站框架) 及github action自動部屬建置的，只需要push就能自動更新文章，免去每次都要重新轉靜態檔的流程:D</p>
+<p>另外推推我使用的主題，使用手冊非常詳細好懂。 <a class="link"   target="_blank" rel="noopener" href="https://keep-docs.xpoet.cn/" >KEEP主題手冊<i class="fas fa-external-link-alt"></i></a></p>
+<p>我會盡量簡單好上手，但如果你有以下技能，會更容易唷:</p>
+<ol>
+<li><p>Git &#x2F; Github 基本概念</p>
+</li>
+<li><p>npm 基本概念</p>
+</li>
+<li><p>Markdown 語法概念</p>
+</li>
+</ol>
+<p>開始前請先安裝:</p>
+<ol>
+<li><p>Node.js</p>
+</li>
+<li><p>Git</p>
+</li>
+<li><p>VSCode(選配)</p>
+</li>
+</ol>
+<p>安裝過程也可以參考:</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://hexo.io/zh-tw/docs/index.html" >Hexo官方文檔<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://easyhexo.com/" >Easy Hexo<i class="fas fa-external-link-alt"></i></a></p>
+<p><del>教得很詳細我就告辭了</del></p>
+<h2 id="安裝Hexo"><a href="#安裝Hexo" class="headerlink" title="安裝Hexo"></a>安裝Hexo</h2><p>以下我用VSCode內的git bash 操作示範:D </p>
+<ol>
+<li>先在喜歡的路徑建立資料夾，並進入</li>
+</ol>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image.png"
+                       
+                 ></p>
+<ol start="2">
+<li>右鍵選擇 【以Code開啟】</li>
+</ol>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image1.png"
+                       
+                 ></p>
+<ol start="3">
+<li><p>開啟Git Bash終端機</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image2.png"
+                        alt="image 2.png"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image3.png"
+                        alt="image 3.png"
+                 ></p>
+</li>
+<li><p>輸入相關指令</p>
+<p>此處的-g 為global，全域安裝的意思</p>
+<p> <code>npm install -g hexo-cli</code></p>
+<p>安裝完成後輸入</p>
+<p><code>hexo init</code></p>
+<p><code>npm install</code></p>
+<p><code>hexo version</code></p>
+<p><strong>hexo安裝完成~!</strong></p>
+</li>
+<li><p>在本機執行看看</p>
+<p><code>hexo server</code></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image4.png"
+                        alt="image 4.png"
+                 ></p>
+<p><del>大功告成</del></p>
+<p>剛開始而已啦XD 關掉案Ctrl + C </p>
+<p>若要打指令都要先關掉哦</p>
+<h2 id="發布文章"><a href="#發布文章" class="headerlink" title="發布文章"></a>發布文章</h2><ol>
+<li><p>輸入指令</p>
+<p><code>hexo new [layout] &lt;title&gt;</code></p>
+<p>EX. <code>hexo new &quot;my first post&quot; </code> 或 <code>hexo new 我的第一篇文章</code></p>
+<p>layout這邊可以先空白，title就是你的文章標題。</p>
+<p>若標題有<strong>空白</strong>，要記得用<strong>引號</strong>包住哦~</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image5.png"
+                        alt="image 5.png"
+                 ></p>
+<p>文章會出現在source底下的_posts</p>
+</li>
+<li><p>編輯md檔案</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image6.png"
+                        alt="image 6.png"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image7.png"
+                        alt="image 7.png"
+                 ></p>
+<p>tags 就是標籤</p>
+<p>categories 是分類(資料夾)，可以參考此<a class="link"   target="_blank" rel="noopener" href="https://app.heptabase.com/cfc51139-7bd8-48f2-b415-debadfabe5ba/card/9411189f-18e5-434f-9927-df0cac5edfe4" >文章<i class="fas fa-external-link-alt"></i></a>做分類設定</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image8.png"
+                        alt="image 8.png"
+                 ></p>
+<p>文章可以使用markdown語法編輯，網路上很多教學，可以找自己能吸收的~</p>
+<p>其實還有很多教學設定，可以多多參考官方文檔或其他教學，在此就不多做贅述了。</p>
+<p><strong>強烈建議先進行基本設定</strong>，尤其是根目錄底下的<code>_config.yml</code>，預設<code>url: http://example.com</code>，記得改為你後續的網址。如果目前沒有，就先維持原狀吧~</p>
+</li>
+</ol>
+<h3 id="重要指令"><a href="#重要指令" class="headerlink" title="重要指令"></a>重要指令</h3><p><code>hexo generate</code>  產生靜態文件(html&#x2F;css&#x2F;js等文件)，可在 pubilic 檔案夾內查閱</p>
+<p><code>hexo clean </code>  清除快取、靜態文件(會移除pubilic 檔案夾，如果有更新檔案但沒跑出來，可以使用此指令，記得再重新<code>$ hexo generate</code>)</p>
+<p><code>hexo deploy</code>  依_config.yml 內配置部屬到指定位置</p>
+<p>題外話，有些教學文章指令會寫<code> $hexo generate</code>，是為了表示這是一段要命令的意思，實際上可以不用打上去唷。當然還是要看場合，因為也有時候是別的用途~</p>
+<h2 id="部署到github上"><a href="#部署到github上" class="headerlink" title="部署到github上"></a>部署到github上</h2><p>嗨~我先假設你已經有<a class="link"   target="_blank" rel="noopener" href="https://github.com/" >Github<i class="fas fa-external-link-alt"></i></a>帳號~沒有的話請趕快註冊一個~</p>
+<p>接下來我也會盡量圖文講解，讓我們來試試看吧:D</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>接下來我們要開兩個repository，你可以想像這是裝你的程式碼的倉庫。</p>
+<p>一個設定為私人，存放原始碼。一個設定公開，存放靜態文件。</p>
+<p>當然如果過程中覺得太困難，也未必要使用這種方式，只是這可以避免你的原始碼公開，又能保有自動部屬的便利性。</p>
+<p>太困難了話，可以先嘗試手動部署，慢慢熟練再來挑戰也沒問題的!</p>
+<ol>
+<li><p>建立repository</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image9.png"
+                        alt="image 9.png"
+                 ></p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image10.png"
+                        alt="image 10.png"
+                 ></p>
+<p>Repository name可以隨便你打，但要記得存放原始碼的在<strong>4.設定成Private</strong>。而<strong>存放靜態檔的設定為Public</strong>。</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image11.png"
+                        alt="image 11.png"
+                 ></p>
+<p><strong>記得存檔</strong></p>
+<p>這裡要注意一下，如果你之後打算用github pages功能，<code>Repository name</code> 這邊請務必要填 <code>[你的github帳號].github.io</code>，可參考<a class="link"   target="_blank" rel="noopener" href="https://medium.com/%E9%80%B2%E6%93%8A%E7%9A%84-git-git-git/%E5%BE%9E%E9%9B%B6%E9%96%8B%E5%A7%8B-%E7%94%A8github-pages-%E4%B8%8A%E5%82%B3%E9%9D%9C%E6%85%8B%E7%B6%B2%E7%AB%99-fa2ae83e6276" >這篇教學<i class="fas fa-external-link-alt"></i></a></p>
+<p>EX. <code>bigchocolaTW.github.io</code></p>
+<ol start="2">
+<li><p>檔案git到github上</p>
+<p>希望在這之前你能先有一些git&#x2F;github觀念了，如果沒有，可以先看看<a class="link"   target="_blank" rel="noopener" href="https://w3c.hexschool.com/git/7ca21e02" >這篇<i class="fas fa-external-link-alt"></i></a>，或者就照抄作業囉XD</p>
+<p><code>git init</code> 初始化工作目錄</p>
+<p><code>git add .</code> 把工作目錄內所有檔案加入staging area</p>
+<p><code>git commit -am &#39;&lt;填寫版本資訊&gt;&#39;</code> 將所有staging area內容(變更等等資訊)送進本地倉庫(loacl repository) 並加註版本資訊</p>
+<p>EX. <code>git commit -am &#39;我的第一版&#39;</code>   </p>
+<p>接下來..</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image12.png"
+                        alt="image 12.png"
+                 ></p>
+</li>
+<li><p>設定自動部屬</p>
+<p>接下來可以直接看這篇文章~因為他寫得非常詳細然後我也累了哈哈哈</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://juejin.cn/post/6943895271751286821" >如何使用 GitHub Actions 自动部署 Hexo 博客<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>但在這之前有幾件事情要注意</strong></p>
+<p>文章中提到的<code>hexo-deploy.yml</code> 文件内容，<strong>請不要直接複製貼上，一定會出錯</strong></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">deploying</span> <span class="string">Hexo</span> <span class="string">project</span> <span class="string">to</span> <span class="string">GitHub</span> <span class="string">pages</span></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">master</span> <span class="comment"># master 分支有 push 行为时就触发这个 action </span></span><br><span class="line">              </span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build-and-deploy:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Checkout</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v3</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">fetch-depth:</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span> <span class="string">and</span> <span class="string">Deploy</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">theme-keep/hexo-deploy-github-pages-action@master</span> <span class="comment"># 使用专门部署 Hexo 到 GitHub pages 的 action</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="attr">PERSONAL_TOKEN:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.HEXO_DEPLOY</span> <span class="string">&#125;&#125;</span> <span class="comment"># secret 名</span></span><br><span class="line">          <span class="attr">PUBLISH_REPOSITORY:</span> <span class="string">XPoet/keep-blog</span> <span class="comment"># 公共仓库，格式：GitHub 用户名/仓库名</span></span><br><span class="line">          <span class="attr">BRANCH:</span> <span class="string">gh-pages</span> <span class="comment"># 分支，填 gh-pages 就行</span></span><br><span class="line">          <span class="attr">PUBLISH_DIR:</span> <span class="string">./public</span> <span class="comment"># 部署 public 目录下的文件</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>原因是這樣的，</p>
+<p>首先，現在github直接複製他的remote命令，預設分支會是main，可以參考<a class="link"   target="_blank" rel="noopener" href="https://www.ithome.com.tw/news/140094" >這則新聞<i class="fas fa-external-link-alt"></i></a></p>
+<p><code>git branch -M main</code>，這個main就是預設分支的名稱，</p>
+<p>而有些文章預設是master，所以這邊要記得修改為你的預設分支名稱。</p>
+<p> <img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image13.png"
+                        alt="image 13.png"
+                 ></p>
+<blockquote>
+<p>如果分支是main記得改main</p>
+</blockquote>
+<p>此外，此處記得修改為你的公開repository~</p>
+<p><img  
+                       lazyload
+                       alt="image"
+                       data-src="/2024/07/24/002hexo%E6%95%99%E5%AD%B8%E8%88%87githubacion%E9%83%A8%E5%B1%AC/image14.png"
+                        alt="image 14.png"
+                 ></p>
+<blockquote>
+<p>記得改為你的repository名稱(公開的那個)</p>
+</blockquote>
+<p>如果你的公開repository有出現檔案，就代表大功告成囉~</p>
+<p>如果你是使用github pages 網址就會是 <code>https://&lt;你的github帳號&gt;.github.io/</code></p>
+<p>像我就是<code>https://bigchocolatw.github.io/</code></p>
+</li>
+</ol>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>謝謝你看到這邊，也辛苦你啦~希望有成功幫助你建立自己的網誌。</p>
+<p>這裡面也有很多設定要摸索，慢慢學習囉~我也加油你也加油</p>
+<p>很感謝網路上各路專家的無私分享，才終於成功讓我建立這個網誌^q^</p>
+</li>
+</ol>
+</li>
+</ol>
+
+                    
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/hexo/">hexo</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/github-action/">github action</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2024/07/25/003/"
+                                   title="npm init 與 npm create差異"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">npm init 與 npm create差異</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/07/24/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"
+                                   title="祝我生日快樂"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">祝我生日快樂</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo%E5%BB%BA%E7%BD%AE%E5%8F%8Agithub-action%E8%87%AA%E5%8B%95%E9%83%A8%E5%B1%AC"><span class="nav-number">1.</span> <span class="nav-text">Hexo建置及github action自動部屬</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80-%E5%BF%85%E5%82%99%E8%A7%80%E5%BF%B5%E8%88%87%E5%B7%A5%E5%85%B7"><span class="nav-number">1.1.</span> <span class="nav-text">前言: 必備觀念與工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DHexo"><span class="nav-number">1.2.</span> <span class="nav-text">安裝Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BC%E5%B8%83%E6%96%87%E7%AB%A0"><span class="nav-number">1.3.</span> <span class="nav-text">發布文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E6%8C%87%E4%BB%A4"><span class="nav-number">1.3.1.</span> <span class="nav-text">重要指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A"><span class="nav-number">1.4.</span> <span class="nav-text">部署到github上</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.4.1.</span> <span class="nav-text">基本概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">1.5.</span> <span class="nav-text">結語</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+        &copy;&nbsp;<span>2024</span>&nbsp;-&nbsp;2024
+        
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">bigchocolaTW</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo%E5%BB%BA%E7%BD%AE%E5%8F%8Agithub-action%E8%87%AA%E5%8B%95%E9%83%A8%E5%B1%AC"><span class="nav-number">1.</span> <span class="nav-text">Hexo建置及github action自動部屬</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80-%E5%BF%85%E5%82%99%E8%A7%80%E5%BF%B5%E8%88%87%E5%B7%A5%E5%85%B7"><span class="nav-number">1.1.</span> <span class="nav-text">前言: 必備觀念與工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%9DHexo"><span class="nav-number">1.2.</span> <span class="nav-text">安裝Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BC%E5%B8%83%E6%96%87%E7%AB%A0"><span class="nav-number">1.3.</span> <span class="nav-text">發布文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%A6%81%E6%8C%87%E4%BB%A4"><span class="nav-number">1.3.1.</span> <span class="nav-text">重要指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A"><span class="nav-number">1.4.</span> <span class="nav-text">部署到github上</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.4.1.</span> <span class="nav-text">基本概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">1.5.</span> <span class="nav-text">結語</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/toggle-theme.js"></script>
+
+<script src="/js/code-block.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+
+<!-- local search -->
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+<!-- lazyload -->
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
